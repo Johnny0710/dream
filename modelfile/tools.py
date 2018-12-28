@@ -52,6 +52,42 @@ class SignUp():
         self.identity.save()
 
 
+class Login():
+    def __init__(self,username,password):
+        self.username = username
+        self.password = password
+        self.exist = None
+
+    def __call__(self, *args, **kwargs):
+        if self.is_exist():
+            return self.identification()
+
+        return False
+
+
+    def is_exist(self):
+        exist =  models.User.objects.filter(username=self.username, password=self.password).first()
+        if exist:
+            self.exist = exist
+            return True
+        else:
+            return False
+
+    def identification(self):
+
+        if models.Hirer.objects.filter(user_id=self.exist.u_id):
+            return 'hirer'
+        if models.Employer.objects.filter(user_id=self.exist.u_id):
+            return 'employer'
+        return False
+
+
+
+
+
+
+
+
 
 
 

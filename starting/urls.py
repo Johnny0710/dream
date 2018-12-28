@@ -21,4 +21,7 @@ urlpatterns = [
     path('',include('apps.index.urls') ),
     path('login/',include('apps.login.urls') ),
     path('signup/',include('apps.signup.urls') ),
+    path('identity/',include('apps.identity.urls') ),
+    path('hirer/',include('apps.hirer.urls') ),
+    path('employer/',include('apps.employer.urls') ),
 ]

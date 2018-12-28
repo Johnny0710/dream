@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'apps.index',
     'apps.login',
     'apps.signup',
+    'apps.hirer',
+    'apps.employer',
+    'apps.identity',
 ]
 
 MIDDLEWARE = [

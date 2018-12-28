@@ -33,3 +33,4 @@ class Employer(models.Model):
     e_id = models.AutoField(primary_key=True)
 
     user = models.OneToOneField('User',related_name='employer', on_delete=models.CASCADE)
+
